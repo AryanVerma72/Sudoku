@@ -1,0 +1,48 @@
+{
+  "id": "/",
+  "name": "ZenSudoku - Paper & Ink",
+  "short_name": "ZenSudoku",
+  "description": "Tactile, lightweight Android Sudoku game with daily challenges and smart hints.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F8F8F6",
+  "theme_color": "#F8F8F6",
+  "categories": ["games", "puzzle"],
+  "lang": "en",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Daily Challenge",
+      "url": "/?mode=daily",
+      "description": "Play today's Sudoku challenge"
+    },
+    {
+      "name": "New Puzzle",
+      "url": "/?mode=new",
+      "description": "Start a new puzzle"
+    }
+  ]
+}

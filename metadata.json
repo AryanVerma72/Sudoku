@@ -1,0 +1,6 @@
+{
+  "name": "ZenSudoku Android - Minimalist Paper & Ink Sudoku",
+  "description": "An ad-free, tactile Android Sudoku game featuring a 9x9 board, 4 difficulty levels, Daily Challenges, pencil notes, smart hints, and lifetime statistics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
