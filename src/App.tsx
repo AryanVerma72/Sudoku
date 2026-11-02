@@ -442,7 +442,7 @@ export default function App() {
     }
   };
 
-  // Restart current puzzle to beginning
+  // Restart current puzzle to beginning (resets mistakes to standard 0/3)
   const handleConfirmRestart = () => {
     setUserGrid(cloneGrid(initialGrid));
     setNotes({});
@@ -450,7 +450,14 @@ export default function App() {
     setTimer(0);
     setHistory([]);
     setActiveHint(null);
+    setIsGameOver(false);
     setShowRestartConfirm(false);
+
+    // Reset mistakes limit back to standard 3 (turn off relaxedMode)
+    const updatedPrefs = { ...preferences, relaxedMode: false };
+    setPreferences(updatedPrefs);
+    savePreferences(updatedPrefs);
+
     if (preferences.hapticsEnabled) triggerHaptic('tap');
   };
 
@@ -634,8 +641,16 @@ export default function App() {
             setTimer(0);
             setIsGameOver(false);
             setHistory([]);
+            const updatedPrefs = { ...preferences, relaxedMode: false };
+            setPreferences(updatedPrefs);
+            savePreferences(updatedPrefs);
           }}
-          onNewGame={() => startNewGame(difficulty)}
+          onNewGame={() => {
+            const updatedPrefs = { ...preferences, relaxedMode: false };
+            setPreferences(updatedPrefs);
+            savePreferences(updatedPrefs);
+            startNewGame(difficulty);
+          }}
         />
       )}
     </div>
